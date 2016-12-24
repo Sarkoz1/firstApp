@@ -10,8 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var MealName: UILabel!
+    @IBOutlet weak var theTextField: UITextField!
+    @IBAction func buttonChange(_ sender: Any) {
+        let nameUserText = theTextField.text
+        if nameUserText == "" {
+            MealName.text = "Введите ваше имя!"
+        } else {
+            MealName.text = "Привет, \(nameUserText!)!"
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let nameUserText = theTextField.text {
+            print(nameUserText)
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
